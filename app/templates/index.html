@@ -2,6 +2,12 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
+  {% if current_user.zip %}
+    <h3>Weather for {{ current_user.zip }}</h3>
+    <iframe src="http://api.openweathermap.org/data/2.5/weather?zip={{current_user.zip}}&mode=html&APPID=ec3e4be3f426f06cc5973261cb5229fa">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+    {% endif %}
     <h1>{{ _('Hi, %(username)s!', username=current_user.username) }}</h1>
     {% if form %}
     {{ wtf.quick_form(form) }}
