@@ -1,0 +1,12 @@
+Dear {{ user.username }},
+
+Here's that post you wanted!
+
+Author: {{auth}}
+
+Text: 
+
+{{post}}
+
+Sincerely,
+The Microblog Team
